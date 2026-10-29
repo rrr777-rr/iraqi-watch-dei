@@ -12,7 +12,7 @@ body {
     overflow-x: hidden;
 }
 
-/* التخطيط العام: متجاوب (عمودي للهواتف، وأفقي للشاشات الكبيرة) */
+/* التخطيط العام للشاشات الكبيرة */
 .app-wrapper {
     display: flex;
     flex-direction: row;
@@ -30,7 +30,6 @@ body {
     justify-content: center;
     overflow: hidden;
     transition: background 0.5s ease;
-    min-height: 400px;
 }
 
 .studio-viewport.night-mode {
@@ -228,7 +227,7 @@ body {
 
 .swatch.dark-leather { background: #110c08; }
 .swatch.brown-leather { background: #3d1e10; }
-.swatch.navy-leather {background: #0a182e; }
+.swatch.navy-leather { background: #0a182e; }
 .swatch.burgundy-leather { background: #3b0a11; }
 
 .swatch.dial-black { background: #08080a; }
@@ -292,7 +291,9 @@ body {
     opacity: 0.9;
 }
 
-/* تصميم متجاوب للهواتف والشاشات الصغيرة (Media Query) */
+/* ==========================================================
+   تثبيت الساعة في أعلى الشاشة للهواتف (Sticky Mobile View)
+   ========================================================== */
 @media screen and (max-width: 900px) {
     .app-wrapper {
         flex-direction: column;
@@ -300,28 +301,49 @@ body {
         overflow-y: auto;
     }
 
+    /* جعل استوديو الساعة ثابتاً (Sticky) في أعلى شاشة الموبايل أثناء السكرول */
     .studio-viewport {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
         width: 100%;
-        height: 50vh;
-        min-height: 350px;
+        height: 48vh; /* ارتفاع ممتاز لإظهار الساعة والبدء بالخيارات تحتها مباشرة */
+        min-height: 320px;
+        z-index: 100; /* تجعل الساعة دائماً فوق القائمة */
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+        border-bottom: 1px solid rgba(212, 175, 55, 0.25);
     }
 
-    .config-panel {
-        width: 100%;
-        height: auto;
-        max-height: none;
-        box-shadow: none;
-        border-right: none;
-        border-top: 1px solid rgba(255, 255, 255, 0.07);
-    }
-
+    /* حماية أبعاد الساعة داخل الموبايل */
     .watch-container {
-        width: 320px;
-        height: 440px;
+        width: 250px;
+        height: 340px;
     }
 
     .silk-pillow {
-        width: 280px;
-        height: 400px;
+        width: 220px;
+        height: 310px;
+    }
+
+    .studio-controls {
+        bottom: 8px;
+        left: 8px;
+        gap: 6px;
+    }
+
+    .studio-controls button {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+
+    /* خيارات التخصيص تمر بمرونة أسفل الساعة الثابتة */
+    .config-panel {
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+        border-right: none;
+        z-index: 10;
+        padding-bottom: 30px;
     }
 }
