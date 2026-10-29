@@ -8,17 +8,19 @@
 body {
     background-color: #050507;
     color: #e5e7eb;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
+/* التخطيط العام: متجاوب (عمودي للهواتف، وأفقي للشاشات الكبيرة) */
 .app-wrapper {
     display: flex;
+    flex-direction: row;
     width: 100vw;
     height: 100vh;
 }
 
-/* منطقة الاستوديو وعرض الساعة */
+/* استوديو العرض */
 .studio-viewport {
     flex: 1;
     position: relative;
@@ -28,6 +30,7 @@ body {
     justify-content: center;
     overflow: hidden;
     transition: background 0.5s ease;
+    min-height: 400px;
 }
 
 .studio-viewport.night-mode {
@@ -45,11 +48,11 @@ body {
 
 .silk-pillow {
     position: absolute;
-    width: 480px;
-    height: 680px;
+    width: 380px;
+    height: 540px;
     background: radial-gradient(ellipse at center, #1e202c 0%, #08090d 85%);
-    border-radius: 44px;
-    box-shadow: inset 0 0 70px rgba(0, 0, 0, 0.95), 0 40px 80px rgba(0, 0, 0, 0.8);
+    border-radius: 40px;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.95), 0 30px 60px rgba(0, 0, 0, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.03);
     transition: opacity 0.5s ease;
 }
@@ -60,8 +63,8 @@ body {
 
 .watch-container {
     position: relative;
-    width: 580px;
-    height: 780px;
+    width: 420px;
+    height: 560px;
     z-index: 10;
     transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -73,21 +76,21 @@ body {
 
 .studio-controls {
     position: absolute;
-    bottom: 25px;
-    left: 25px;
+    bottom: 20px;
+    left: 20px;
     display: flex;
-    gap: 12px;
+    gap: 10px;
     z-index: 20;
 }
 
 .studio-controls button {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background: rgba(18, 20, 28, 0.85);
     border: 1px solid rgba(212, 175, 55, 0.35);
     color: #d4af37;
-    font-size: 16px;
+    font-size: 15px;
     cursor: pointer;
     backdrop-filter: blur(12px);
     transition: all 0.2s ease;
@@ -99,22 +102,22 @@ body {
 .studio-controls button:hover {
     background: #d4af37;
     color: #000;
-    box-shadow: 0 0 18px rgba(212, 175, 55, 0.4);
 }
 
 /* لوحة التخصيص الجانبية */
 .config-panel {
-    width: 450px;
+    width: 420px;
     background: #090a0e;
     border-right: 1px solid rgba(255, 255, 255, 0.07);
     display: flex;
     flex-direction: column;
     z-index: 30;
     box-shadow: -10px 0 35px rgba(0, 0, 0, 0.85);
+    height: 100vh;
 }
 
 .brand-header {
-    padding: 24px 22px 16px;
+    padding: 20px 20px 14px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -128,7 +131,7 @@ body {
 
 .brand-header h1 {
     font-family: 'Cinzel', serif;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 800;
     color: #fff;
     margin: 4px 0;
@@ -142,7 +145,7 @@ body {
 .accordion-container {
     flex: 1;
     overflow-y: auto;
-    padding: 18px 22px;
+    padding: 16px 20px;
 }
 
 .accordion-container::-webkit-scrollbar {
@@ -154,19 +157,19 @@ body {
 }
 
 .config-section {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-    padding-bottom: 16px;
+    padding-bottom: 14px;
 }
 
 .config-section h3 {
     font-size: 13px;
     color: #d4af37;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .option-group {
-    margin-bottom: 14px;
+    margin-bottom: 12px;
 }
 
 .option-group label {
@@ -186,7 +189,7 @@ body {
     background: #12141d;
     border: 1px solid #222533;
     color: #ccc;
-    padding: 9px 10px;
+    padding: 8px 10px;
     border-radius: 6px;
     font-size: 11px;
     cursor: pointer;
@@ -201,12 +204,12 @@ body {
 
 .color-swatches {
     display: flex;
-    gap: 12px;
+    gap: 10px;
 }
 
 .swatch {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     cursor: pointer;
     border: 2px solid transparent;
@@ -225,7 +228,7 @@ body {
 
 .swatch.dark-leather { background: #110c08; }
 .swatch.brown-leather { background: #3d1e10; }
-.swatch.navy-leather { background: #0a182e; }
+.swatch.navy-leather {background: #0a182e; }
 .swatch.burgundy-leather { background: #3b0a11; }
 
 .swatch.dial-black { background: #08080a; }
@@ -235,29 +238,28 @@ body {
 
 .custom-select {
     width: 100%;
-    padding: 10px;
+    padding: 9px;
     background: #12141d;
     border: 1px solid #222533;
     color: #fff;
     border-radius: 6px;
     outline: none;
-    font-size: 12px;
+    font-size: 11px;
 }
 
-/* تقرير ومواصفات القطع المختارة */
 .summary-footer {
-    padding: 16px 22px;
+    padding: 14px 20px;
     background: #060709;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .spec-summary-box {
-    font-size: 11px;
+    font-size: 10px;
     color: #aaa;
-    margin-bottom: 12px;
-    line-height: 1.6;
+    margin-bottom: 10px;
+    line-height: 1.5;
     background: #0d0f17;
-    padding: 10px;
+    padding: 8px;
     border-radius: 6px;
     border: 1px solid rgba(212, 175, 55, 0.15);
 }
@@ -274,18 +276,52 @@ body {
 
 .save-btn {
     flex: 1;
-    padding: 12px;
+    padding: 10px;
     background: linear-gradient(135deg, #d4af37, #aa771c);
     border: none;
     color: #000;
     font-weight: 700;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: 1px;
     transition: opacity 0.2s;
 }
 
 .save-btn:hover {
     opacity: 0.9;
+}
+
+/* تصميم متجاوب للهواتف والشاشات الصغيرة (Media Query) */
+@media screen and (max-width: 900px) {
+    .app-wrapper {
+        flex-direction: column;
+        height: auto;
+        overflow-y: auto;
+    }
+
+    .studio-viewport {
+        width: 100%;
+        height: 50vh;
+        min-height: 350px;
+    }
+
+    .config-panel {
+        width: 100%;
+        height: auto;
+        max-height: none;
+        box-shadow: none;
+        border-right: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .watch-container {
+        width: 320px;
+        height: 440px;
+    }
+
+    .silk-pillow {
+        width: 280px;
+        height: 400px;
+    }
 }
