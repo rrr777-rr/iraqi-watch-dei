@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #060608;
+    background-color: #050507;
     color: #e5e7eb;
     height: 100vh;
     overflow: hidden;
@@ -18,15 +18,20 @@ body {
     height: 100vh;
 }
 
-/* استوديو العرض */
+/* منطقة الاستوديو وعرض الساعة */
 .studio-viewport {
     flex: 1;
     position: relative;
-    background: radial-gradient(circle at 40% 40%, #1c1e28 0%, #050507 100%);
+    background: radial-gradient(circle at 45% 45%, #181a24 0%, #030305 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    transition: background 0.5s ease;
+}
+
+.studio-viewport.night-mode {
+    background: #020203;
 }
 
 .presentation-case {
@@ -40,18 +45,23 @@ body {
 
 .silk-pillow {
     position: absolute;
-    width: 460px;
-    height: 660px;
-    background: radial-gradient(ellipse at center, #232633 0%, #0c0d12 85%);
+    width: 480px;
+    height: 680px;
+    background: radial-gradient(ellipse at center, #1e202c 0%, #08090d 85%);
     border-radius: 44px;
-    box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.95), 0 35px 70px rgba(0, 0, 0, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.04);
+    box-shadow: inset 0 0 70px rgba(0, 0, 0, 0.95), 0 40px 80px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: opacity 0.5s ease;
+}
+
+.studio-viewport.night-mode .silk-pillow {
+    opacity: 0.15;
 }
 
 .watch-container {
     position: relative;
-    width: 540px;
-    height: 740px;
+    width: 580px;
+    height: 780px;
     z-index: 10;
     transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -66,7 +76,7 @@ body {
     bottom: 25px;
     left: 25px;
     display: flex;
-    gap: 10px;
+    gap: 12px;
     z-index: 20;
 }
 
@@ -77,22 +87,25 @@ body {
     background: rgba(18, 20, 28, 0.85);
     border: 1px solid rgba(212, 175, 55, 0.35);
     color: #d4af37;
-    font-size: 18px;
+    font-size: 16px;
     cursor: pointer;
     backdrop-filter: blur(12px);
     transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .studio-controls button:hover {
     background: #d4af37;
     color: #000;
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    box-shadow: 0 0 18px rgba(212, 175, 55, 0.4);
 }
 
 /* لوحة التخصيص الجانبية */
 .config-panel {
-    width: 440px;
-    background: #0b0c10;
+    width: 450px;
+    background: #090a0e;
     border-right: 1px solid rgba(255, 255, 255, 0.07);
     display: flex;
     flex-direction: column;
@@ -101,13 +114,13 @@ body {
 }
 
 .brand-header {
-    padding: 28px 25px 18px;
+    padding: 24px 22px 16px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .brand-header .sub-title {
     font-family: 'Cinzel', serif;
-    font-size: 10px;
+    font-size: 9px;
     letter-spacing: 3px;
     color: #d4af37;
     display: block;
@@ -115,25 +128,25 @@ body {
 
 .brand-header h1 {
     font-family: 'Cinzel', serif;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 800;
     color: #fff;
     margin: 4px 0;
 }
 
 .brand-header p {
-    font-size: 12px;
+    font-size: 11px;
     color: #888;
 }
 
 .accordion-container {
     flex: 1;
     overflow-y: auto;
-    padding: 20px 25px;
+    padding: 18px 22px;
 }
 
 .accordion-container::-webkit-scrollbar {
-    width: 5px;
+    width: 4px;
 }
 .accordion-container::-webkit-scrollbar-thumb {
     background: #222;
@@ -141,26 +154,26 @@ body {
 }
 
 .config-section {
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-    padding-bottom: 18px;
+    padding-bottom: 16px;
 }
 
 .config-section h3 {
-    font-size: 14px;
+    font-size: 13px;
     color: #d4af37;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
 }
 
 .option-group {
-    margin-bottom: 15px;
+    margin-bottom: 14px;
 }
 
 .option-group label {
     display: block;
-    font-size: 12px;
+    font-size: 11px;
     color: #aaa;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .button-grid {
@@ -170,12 +183,12 @@ body {
 }
 
 .opt-btn {
-    background: #13151f;
-    border: 1px solid #252836;
+    background: #12141d;
+    border: 1px solid #222533;
     color: #ccc;
-    padding: 10px 12px;
+    padding: 9px 10px;
     border-radius: 6px;
-    font-size: 12px;
+    font-size: 11px;
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -183,7 +196,7 @@ body {
 .opt-btn.active, .opt-btn:hover {
     border-color: #d4af37;
     color: #fff;
-    background: #1d2030;
+    background: #1b1e2c;
 }
 
 .color-swatches {
@@ -192,8 +205,8 @@ body {
 }
 
 .swatch {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     cursor: pointer;
     border: 2px solid transparent;
@@ -202,7 +215,7 @@ body {
 
 .swatch.active {
     border-color: #d4af37;
-    transform: scale(1.18);
+    transform: scale(1.15);
 }
 
 .swatch.steel { background: linear-gradient(135deg, #e0e0e0, #777); }
@@ -222,53 +235,57 @@ body {
 
 .custom-select {
     width: 100%;
-    padding: 11px;
-    background: #13151f;
-    border: 1px solid #252836;
+    padding: 10px;
+    background: #12141d;
+    border: 1px solid #222533;
     color: #fff;
     border-radius: 6px;
     outline: none;
-    font-size: 13px;
+    font-size: 12px;
 }
 
+/* تقرير ومواصفات القطع المختارة */
 .summary-footer {
-    padding: 20px 25px;
-    background: #07080a;
+    padding: 16px 22px;
+    background: #060709;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.price-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 14px;
+.spec-summary-box {
+    font-size: 11px;
+    color: #aaa;
+    margin-bottom: 12px;
+    line-height: 1.6;
+    background: #0d0f17;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(212, 175, 55, 0.15);
 }
 
-.price-container span {
-    font-size: 13px;
-    color: #888;
-}
-
-.price-container strong {
-    font-size: 24px;
+.spec-summary-box span {
     color: #d4af37;
-    font-family: 'Cinzel', serif;
+    font-weight: bold;
 }
 
-.checkout-btn {
-    width: 100%;
-    padding: 14px;
+.action-btn-group {
+    display: flex;
+    gap: 8px;
+}
+
+.save-btn {
+    flex: 1;
+    padding: 12px;
     background: linear-gradient(135deg, #d4af37, #aa771c);
     border: none;
     color: #000;
     font-weight: 700;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 12px;
     letter-spacing: 1px;
     transition: opacity 0.2s;
 }
 
-.checkout-btn:hover {
+.save-btn:hover {
     opacity: 0.9;
 }

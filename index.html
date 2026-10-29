@@ -3,41 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iraq | Atelier High Horlogerie</title>
-    <link rel="stylesheet" href="style.css">
+    <title>IRAQI WATCHES | Atelier High Horlogerie</title>
+    <!-- استدعاء خطوط Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Tajawal:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="app-wrapper">
-        
-        <!-- استوديو العرض -->
+        <!-- استوديو عرض الساعة -->
         <main class="studio-viewport" id="studioViewport">
-            <div class="luxury-backdrop"></div>
-            
             <div class="presentation-case">
                 <div class="silk-pillow"></div>
                 
                 <div class="watch-container" id="watchStage">
                     <svg id="watchSVG" viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg">
                         <defs>
-                            <!-- خامات المعادن الواقعية -->
+                            <!-- خامات المعادن -->
                             <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#cf9f38"/>
-                                <stop offset="25%" stop-color="#fff5c0"/>
-                                <stop offset="50%" stop-color="#a07418"/>
+                                <stop offset="0%" stop-color="#d4af37"/>
+                                <stop offset="25%" stop-color="#fff6cc"/>
+                                <stop offset="50%" stop-color="#aa771c"/>
                                 <stop offset="75%" stop-color="#f5e1a4"/>
-                                <stop offset="100%" stop-color="#785309"/>
+                                <stop offset="100%" stop-color="#664608"/>
                             </linearGradient>
 
                             <linearGradient id="steelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#abb2b9"/>
+                                <stop offset="0%" stop-color="#c8cbcf"/>
                                 <stop offset="20%" stop-color="#ffffff"/>
-                                <stop offset="45%" stop-color="#797d7f"/>
-                                <stop offset="70%" stop-color="#d5d8dc"/>
-                                <stop offset="100%" stop-color="#424949"/>
+                                <stop offset="50%" stop-color="#6c7278"/>
+                                <stop offset="80%" stop-color="#e2e4e8"/>
+                                <stop offset="100%" stop-color="#3a3f44"/>
                             </linearGradient>
 
                             <linearGradient id="roseGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -48,41 +46,40 @@
                                 <stop offset="100%" stop-color="#6e3926"/>
                             </linearGradient>
 
-                            <!-- خامة التيتانيوم/الأسود PVD -->
                             <linearGradient id="blackPvdGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#333338"/>
-                                <stop offset="40%" stop-color="#151518"/>
-                                <stop offset="70%" stop-color="#28282d"/>
-                                <stop offset="100%" stop-color="#09090b"/>
+                                <stop offset="0%" stop-color="#3a3a40"/>
+                                <stop offset="40%" stop-color="#111114"/>
+                                <stop offset="70%" stop-color="#222226"/>
+                                <stop offset="100%" stop-color="#08080a"/>
                             </linearGradient>
 
-                            <!-- نقش جلد التمساح Faux Croco -->
+                            <!-- نقشة جلد التمساح -->
                             <pattern id="crocoPattern" width="30" height="18" patternUnits="userSpaceOnUse">
                                 <path d="M 0 0 L 30 0 L 28 18 L 2 18 Z" fill="none" stroke="rgba(0,0,0,0.4)" stroke-width="1.2"/>
                                 <path d="M 8 0 L 6 18 M 15 0 L 15 18 M 23 0 L 25 18" fill="none" stroke="rgba(0,0,0,0.25)" stroke-width="0.8"/>
                             </pattern>
 
-                            <!-- نقش Guilloché الملكي للمينا -->
+                            <!-- نقشة الجيلوش -->
                             <pattern id="guillochePattern" width="12" height="12" patternUnits="userSpaceOnUse">
                                 <circle cx="6" cy="6" r="5" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/>
                                 <circle cx="6" cy="6" r="2.5" fill="none" stroke="rgba(0,0,0,0.15)" stroke-width="0.5"/>
                             </pattern>
 
-                            <!-- انعكاس الكريستال الياقوتي Dynamic Glare -->
+                            <!-- انعكاس زجاج الياقوت -->
                             <linearGradient id="sapphireGlare" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="rgba(255,255,255,0.45)"/>
-                                <stop offset="20%" stop-color="rgba(255,255,255,0.1)"/>
-                                <stop offset="45%" stop-color="rgba(255,255,255,0)"/>
-                                <stop offset="70%" stop-color="rgba(100,180,255,0.08)"/>
-                                <stop offset="100%" stop-color="rgba(255,255,255,0.25)"/>
+                                <stop offset="0%" stop-color="rgba(255,255,255,0.4)"/>
+                                <stop offset="25%" stop-color="rgba(255,255,255,0.08)"/>
+                                <stop offset="50%" stop-color="rgba(255,255,255,0)"/>
+                                <stop offset="80%" stop-color="rgba(120,190,255,0.1)"/>
+                                <stop offset="100%" stop-color="rgba(255,255,255,0.2)"/>
                             </linearGradient>
 
-                            <!-- ظل واقعي للساعة -->
+                            <!-- الظل الواقعي -->
                             <filter id="realShadow" x="-30%" y="-30%" width="160%" height="160%">
-                                <feGaussianBlur in="SourceAlpha" stdDeviation="15"/>
-                                <feOffset dx="0" dy="25" result="offsetblur"/>
+                                <feGaussianBlur in="SourceAlpha" stdDeviation="16"/>
+                                <feOffset dx="0" dy="28" result="offsetblur"/>
                                 <feComponentTransfer>
-                                    <feFuncA type="linear" slope="0.75"/>
+                                    <feFuncA type="linear" slope="0.8"/>
                                 </feComponentTransfer>
                                 <feMerge> 
                                     <feMergeNode/>
@@ -91,10 +88,13 @@
                             </filter>
                         </defs>
 
+                        <!-- طبقات الساعة -->
                         <g id="watchGroup" filter="url(#realShadow)">
                             <g id="strapTopGroup"></g>
                             <g id="strapBottomGroup"></g>
+                            <g id="caseLugsGroup"></g>
                             <g id="caseGroup"></g>
+                            <g id="crownGroup"></g>
                             <g id="bezelGroup"></g>
                             <g id="dialGroup"></g>
                             <g id="dateWindowGroup"></g>
@@ -106,24 +106,25 @@
                 </div>
             </div>
 
+            <!-- أدوات التحكم بالعرض -->
             <div class="studio-controls">
                 <button id="zoomInBtn" title="تكبير">+</button>
                 <button id="zoomOutBtn" title="تصغير">-</button>
                 <button id="resetViewBtn" title="إعادة ضبط">↺</button>
+                <button id="lumeToggleBtn" title="الإضاءة الليلية (Lume)">🌙</button>
             </div>
         </main>
 
-        <!-- لوحة الإعدادات الجانبية -->
+        <!-- لوحة خيارات التخصيص الجانبية -->
         <aside class="config-panel">
             <header class="brand-header">
                 <span class="sub-title">ATELIER HIGH HORLOGERIE</span>
                 <h1>IRAQI WATCHES</h1>
-                <p>استوديو تخصيص الساعات السويسرية الفاخرة</p>
+                <p>استوديو تصميم وتخصيص قطع الساعات الفاخرة</p>
             </header>
 
             <div class="accordion-container">
-                
-                <!-- 1. هيكل الساعة وإطارها -->
+                <!-- 1. العلبة والإطار -->
                 <section class="config-section">
                     <h3>1. العلبة الإطار (Case & Bezel)</h3>
                     <div class="option-group">
@@ -162,21 +163,19 @@
                         </div>
                     </div>
 
-                    <!-- خيارات الجلد -->
                     <div class="option-group" id="leatherOptions">
-                        <label>نقشة الجلد:</label>
+                        <label>نقشة وتفاصيل الجلد:</label>
                         <div class="button-grid" data-param="strapTexture">
                             <button class="opt-btn active" data-val="croco">تمساح بارز (Crocodile)</button>
                             <button class="opt-btn" data-val="smooth">جلد إيطالي ناعم</button>
                         </div>
                     </div>
 
-                    <!-- خيارات السوار المعدني -->
                     <div class="option-group" id="steelOptions" style="display: none;">
-                        <label>تصميم السوار المعدني:</label>
+                        <label>تصميم حلقات السوار المعدني:</label>
                         <div class="button-grid" data-param="steelStyle">
-                            <button class="opt-btn active" data-val="oyster">أويستر 3 وصلات (Oyster)</button>
-                            <button class="opt-btn" data-val="jubilee">جوبيلي 5 وصلات (Jubilee)</button>
+                            <button class="opt-btn active" data-val="oyster">أويستر 3 حلقات (Oyster)</button>
+                            <button class="opt-btn" data-val="jubilee">جوبيلي 5 حلقات دائرية (Jubilee)</button>
                         </div>
                     </div>
 
@@ -191,11 +190,11 @@
                     </div>
                 </section>
 
-                <!-- 3. المينا والتأثيرات -->
+                <!-- 3. المينا وشاشة العرض -->
                 <section class="config-section">
-                    <h3>3. المينا والوجه (Dial & Texture)</h3>
+                    <h3>3. المينا وشاشة العرض (Dial & Display)</h3>
                     <div class="option-group">
-                        <label>لون المينا الرئيسي:</label>
+                        <label>لون وشكل الشاشة الداخلية للمينا:</label>
                         <div class="color-swatches" data-param="dialColor">
                             <span class="swatch dial-black active" data-val="#08080a" title="أسود عقيق"></span>
                             <span class="swatch dial-white" data-val="#f4f5f7" title="أبيض عاجي"></span>
@@ -204,7 +203,7 @@
                         </div>
                     </div>
                     <div class="option-group">
-                        <label>نقش ونمط المينا:</label>
+                        <label>نمط وتشطيب المينا:</label>
                         <div class="button-grid" data-param="dialPattern">
                             <button class="opt-btn active" data-val="sunburst">شعاع الشمس (Sunray)</button>
                             <button class="opt-btn" data-val="guilloche">جيلوش كلاسيكي (Guilloché)</button>
@@ -221,26 +220,26 @@
 
                 <!-- 4. الأرقام والعقارب -->
                 <section class="config-section">
-                    <h3>4. الأرقام والعقارب (Hands & Markers)</h3>
+                    <h3>4. خطوط وشكل الأرقام والعقارب (Numerals & Hands)</h3>
                     <div class="option-group">
-                        <label>لغة ونوع الأرقام:</label>
+                        <label>لغة ونمط الأرقام:</label>
                         <select id="numeralLanguageSelect" class="custom-select">
+                            <option value="roman">الأرقام الرومانية (I, II, III...)</option>
                             <option value="arabic_eastern">الأرقام العربية الشرقية (١، ٢، ٣...)</option>
                             <option value="western">الأرقام الغربية (1, 2, 3...)</option>
-                            <option value="roman">الأرقام الرومانية (I, II, III...)</option>
                             <option value="hindi">الأرقام الهندية/الديوناغرية (१, २, ३...)</option>
                             <option value="minimal">مؤشرات هندسية حدسية (Minimalist)</option>
                         </select>
                     </div>
                     <div class="option-group">
-                        <label>شكل العقارب (Hands Design):</label>
+                        <label>تصميم وشكل العقارب:</label>
                         <div class="button-grid" data-param="handsStyle">
                             <button class="opt-btn active" data-val="dauphine">دوفين مضلع (Dauphine)</button>
                             <button class="opt-btn" data-val="breguet">بريجيه كلاسيكي (Breguet)</button>
                         </div>
                     </div>
                     <div class="option-group">
-                        <label>لون العقارب والأرقام:</label>
+                        <label>لون الأرقام والعقارب:</label>
                         <div class="color-swatches" data-param="numeralColor">
                             <span class="swatch gold active" data-val="gold" title="ذهب"></span>
                             <span class="swatch steel" data-val="steel" title="ستيل"></span>
@@ -248,21 +247,20 @@
                         </div>
                     </div>
                 </section>
-
             </div>
 
-            <!-- التسعير والطلب -->
+            <!-- ملخص قطع الساعة -->
             <footer class="summary-footer">
-                <div class="price-container">
-                    <span>السعر التقديري:</span>
-                    <strong id="watchPrice">$13,200</strong>
+                <div class="spec-summary-box" id="specSummary">
+                    جاري تحميل قطع التصميم...
                 </div>
-                <button class="checkout-btn" id="orderBtn">طلب النسخة المخصصة</button>
+                <div class="action-btn-group">
+                    <button class="save-btn" id="saveDesignBtn">حفظ وتصدير مواصفات الساعة</button>
+                </div>
             </footer>
         </aside>
-
     </div>
 
-    <script src="app.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
